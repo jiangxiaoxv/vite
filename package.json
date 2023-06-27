@@ -1,0 +1,22 @@
+{
+  "name": "student-vite",
+  "version": "1.0.0",
+  "description": "# vue-cli 会使用vite作为预设构建工具， # vue-cli 去构建vue项目的时候要写vue.config.js不再是vite的配置（目前只基于浏览器项目） # vite也支持直接构建react项目，也支持构建angular项目，svelte项目也支持构建",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangxiaoxv/vite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiangxiaoxv/vite/issues"
+  },
+  "homepage": "https://github.com/jiangxiaoxv/vite#readme"
+}
