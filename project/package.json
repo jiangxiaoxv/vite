@@ -15,6 +15,7 @@
         "lodash-es": "^4.17.21"
     },
     "devDependencies": {
+        "postcss-preset-env": "^8.5.1",
         "vite": "^4.3.9"
     }
 }

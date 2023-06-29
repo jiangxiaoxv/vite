@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 
+const postcssPresetEnv = require('postcss-preset-env');
+
 export default defineConfig({
   optimizeDeps: {
     // exclude: ['lodash-es'], // 当遇到lodash-es这个依赖的时候不进行依赖预构建，不处理多包传输问题
@@ -41,5 +43,9 @@ export default defineConfig({
       sass: {},
     },
     devSourcemap: true, // 开始css的sourcemap（文件索引）
+    // vite的诞生一定会让postcss再火一次，这里配置相当于建了一个postcss.config.js
+    postcss: {
+      plugins: [postcssPresetEnv()],
+    },
   },
 });
