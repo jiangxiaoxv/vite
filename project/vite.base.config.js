@@ -29,5 +29,17 @@ export default defineConfig({
       hashPrefix: 'nc', // 生成hash的个性化
       globalModulePaths: ['./components'], // 代表不想参与到css模块化的路径
     },
+    // key + config key代表预处理器的名
+    preprocessorOptions: {
+      // 整个的配置对象最终给到less的执行参数（全局参数）中去
+      less: {
+        math: 'always',
+        globalVars: {
+          mainColor: 'green',
+        },
+      },
+      sass: {},
+    },
+    devSourcemap: true, // 开始css的sourcemap（文件索引）
   },
 });
