@@ -1,0 +1,14 @@
+// @main2Color: red;
+
+.content {
+    .main {
+        // background-color: @mainColor;
+        // width: 100px;
+        // 响应式布局，宽度自适应；
+        // 假设有一个400px容器, 最小200px，最大200px，中间是400 * 0.3
+        width: clamp(100px, 30%, 200px);
+        height: 100px;
+        background-color: var(--globalColor);
+        user-select: none;
+    }
+}
