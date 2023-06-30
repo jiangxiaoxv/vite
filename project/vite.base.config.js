@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 // import { ViteAliases } from 'vite-aliases';
 import MyViteAliases from './plugins/ViteAliases.js';
-
+import { createHtmlPlugin } from 'vite-plugin-html';
+const MyCreateHtmlPlugin = require('./plugins/CreateHtmlPlugin.js');
 const postcssPresetEnv = require('postcss-preset-env');
 const path = require('path');
 
@@ -74,5 +75,23 @@ export default defineConfig({
     emptyOutDir: true, // 清除输出目录，重新构建输出
   },
   //   plugins: [ViteAliases({ prefix: '@' })],
-  plugins: [MyViteAliases()],
+  plugins: [
+    MyViteAliases(),
+    MyCreateHtmlPlugin({
+      inject: {
+        data: {
+          title: '哇哈哈',
+        },
+      },
+    }),
+    /* createHtmlPlugin({
+      minify: true,
+      //   template: 'public/index.html',
+      inject: {
+        data: {
+          title: 'vite-学习-plugin-首页',
+        },
+      },
+    }), */
+  ],
 });
