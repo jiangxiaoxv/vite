@@ -58,4 +58,16 @@ export default defineConfig({
       ],
     },
   },
+  build: {
+    // 配置rollup的一些构建策略
+    rollupOptions: {
+      // 控制输出
+      output: {
+        assetFileNames: '[name].[hash:5].[ext]',
+      },
+    },
+    assetsInlineLimit: 4096, //4kb 小于4096转化为base64
+    //   outDir: 'testDist', // 资源输出目录
+    assetsDir: 'static', // 静态资源输出的目录
+  },
 });
