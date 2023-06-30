@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 
 const postcssPresetEnv = require('postcss-preset-env');
+const path = require('path');
 
 export default defineConfig({
   optimizeDeps: {
@@ -45,7 +46,11 @@ export default defineConfig({
     devSourcemap: true, // 开始css的sourcemap（文件索引）
     // vite的诞生一定会让postcss再火一次，这里配置相当于建了一个postcss.config.js
     postcss: {
-      plugins: [postcssPresetEnv()],
+      plugins: [
+        postcssPresetEnv({
+          importFrom: path.resolve(__dirname, './variable.css'), // 就好比你现在让postcss去知道 有一些全局变量需要记下来
+        }),
+      ],
     },
   },
 });
