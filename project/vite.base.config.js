@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+// import { ViteAliases } from 'vite-aliases';
 
 const postcssPresetEnv = require('postcss-preset-env');
 const path = require('path');
@@ -69,5 +70,7 @@ export default defineConfig({
     assetsInlineLimit: 4096, //4kb 小于4096转化为base64
     //   outDir: 'testDist', // 资源输出目录
     assetsDir: 'static', // 静态资源输出的目录
+    emptyOutDir: true, // 清除输出目录，重新构建输出
   },
+  //   plugins: [ViteAliases({ prefix: '@' })],
 });
