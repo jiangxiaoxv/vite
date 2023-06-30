@@ -7,5 +7,5 @@ import './src/style/index.css';
 import './components/componentA.js';
 
 // import './src/imageLoader.js';
-import '@/imageLoader';
+import '@/imageLoader.js';
 console.log(count);

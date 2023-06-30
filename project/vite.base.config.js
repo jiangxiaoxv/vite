@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 // import { ViteAliases } from 'vite-aliases';
+import MyViteAliases from './plugins/ViteAliases.js';
 
 const postcssPresetEnv = require('postcss-preset-env');
 const path = require('path');
@@ -8,12 +9,12 @@ export default defineConfig({
   optimizeDeps: {
     // exclude: ['lodash-es'], // 当遇到lodash-es这个依赖的时候不进行依赖预构建，不处理多包传输问题
   },
-  resolve: {
+  /* resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
-  },
-  envPrefix: 'ENV_',
+  }, */
+  envPrefix: 'ENV_', // 全局注入的环境变量
   css: {
     // 对css的行为进行配置
     // modules 配置最终会丢给postcss modules，可以查看post-css具体文档
@@ -73,4 +74,5 @@ export default defineConfig({
     emptyOutDir: true, // 清除输出目录，重新构建输出
   },
   //   plugins: [ViteAliases({ prefix: '@' })],
+  plugins: [MyViteAliases()],
 });
