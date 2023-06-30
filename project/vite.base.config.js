@@ -6,6 +6,7 @@ const MyCreateHtmlPlugin = require('./plugins/CreateHtmlPlugin.js');
 const postcssPresetEnv = require('postcss-preset-env');
 const path = require('path');
 import { viteMockServe } from 'vite-plugin-mock';
+import VitePluginMock from './plugins/VitePluginMock.js';
 
 export default defineConfig({
   optimizeDeps: {
@@ -85,7 +86,8 @@ export default defineConfig({
         },
       },
     }),
-    viteMockServe(), // 自动会在src下面找到mock文件夹
+    VitePluginMock(),
+    // viteMockServe(), // 自动会在src下面找到mock文件夹
     /* createHtmlPlugin({
       minify: true,
       //   template: 'public/index.html',

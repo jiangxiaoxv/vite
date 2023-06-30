@@ -1,4 +1,5 @@
-import mockjs from 'mockjs';
+const mockjs = require('mockjs');
+
 const userList = mockjs.mock({
   'data|100': [
     {
@@ -11,7 +12,7 @@ const userList = mockjs.mock({
     },
   ],
 });
-
+console.log('userList', userList);
 module.exports = [
   {
     method: 'post',
