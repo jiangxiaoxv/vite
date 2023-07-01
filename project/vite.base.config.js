@@ -87,6 +87,12 @@ export default defineConfig({
       },
     }),
     VitePluginMock(),
+    // 整个配置文件的解析流程完全完毕以后走的钩子
+    //   configResolved(server)
+    // 热更新的生命周期钩子
+    // handleHotUpdate(),
+    // options(rollupOptions){ vite和rollup都会调用这个钩子} // options 传递过来的rollup配置
+    //   buildStart(fullRollupOptions) {}
     // viteMockServe(), // 自动会在src下面找到mock文件夹
     /* createHtmlPlugin({
       minify: true,
