@@ -7,7 +7,10 @@ import './src/style/index.css';
 import './components/componentA.js';
 
 // import './src/imageLoader.js';
-import '@/imageLoader.js';
+// import '@/imageLoader.js';
+import('./src/imageLoader').then((data) => {
+  console.log('data', data);
+});
 import Axios from 'axios';
 console.log(count);
 
