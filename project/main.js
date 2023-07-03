@@ -9,14 +9,14 @@ import './components/componentA.js';
 // import './src/imageLoader.js';
 // import '@/imageLoader.js';
 import('./src/imageLoader').then((data) => {
-  console.log('data', data);
+  //   console.log('data', data);
 });
 import Axios from 'axios';
-console.log(count);
+// console.log(count);
 
 Axios.post('/api/users').then(
   (res) => {
-    console.log(res.data);
+    // console.log(res.data);
   },
   (err) => {
     console.log(err);

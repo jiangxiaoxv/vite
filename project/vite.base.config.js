@@ -8,6 +8,7 @@ const path = require('path');
 import { viteMockServe } from 'vite-plugin-mock';
 import VitePluginMock from './plugins/VitePluginMock.js';
 import viteCompression from 'vite-plugin-compression';
+import importToCDN from 'vite-plugin-cdn-import';
 
 export default defineConfig({
   optimizeDeps: {
@@ -71,6 +72,7 @@ export default defineConfig({
       output: {
         assetFileNames: '[name].[hash:5].[ext]',
       },
+      //   external: ['lodash'],
     },
     assetsInlineLimit: 4096, //4kb 小于4096转化为base64
     //   outDir: 'testDist', // 资源输出目录
@@ -89,6 +91,15 @@ export default defineConfig({
     }),
     VitePluginMock(),
     viteCompression(),
+    importToCDN({
+      modules: [
+        {
+          name: 'lodash',
+          var: '_',
+          path: `https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js`,
+        },
+      ],
+    }),
     // 整个配置文件的解析流程完全完毕以后走的钩子
     //   configResolved(server)
     // 热更新的生命周期钩子

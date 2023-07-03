@@ -20,6 +20,7 @@
         "postcss-preset-env": "^8.5.1",
         "vite": "^4.3.9",
         "vite-aliases": "^0.11.2",
+        "vite-plugin-cdn-import": "^0.3.5",
         "vite-plugin-html": "^3.2.0",
         "vite-plugin-mock": "^3.0.0"
     }
