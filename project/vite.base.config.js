@@ -7,6 +7,7 @@ const postcssPresetEnv = require('postcss-preset-env');
 const path = require('path');
 import { viteMockServe } from 'vite-plugin-mock';
 import VitePluginMock from './plugins/VitePluginMock.js';
+import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig({
   optimizeDeps: {
@@ -87,6 +88,7 @@ export default defineConfig({
       },
     }),
     VitePluginMock(),
+    viteCompression(),
     // 整个配置文件的解析流程完全完毕以后走的钩子
     //   configResolved(server)
     // 热更新的生命周期钩子
