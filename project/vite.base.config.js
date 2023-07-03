@@ -19,6 +19,16 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   }, */
+  server: {
+    proxy: {
+      // key + 描述对象
+      '/devApi': {
+        target: 'https://www.360.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/devApi/, ''),
+      },
+    },
+  },
   envPrefix: 'ENV_', // 全局注入的环境变量
   css: {
     // 对css的行为进行配置

@@ -13,10 +13,11 @@ import('./src/imageLoader').then((data) => {
 });
 import Axios from 'axios';
 // console.log(count);
-
 Axios.post('/api/users').then(
+  // Axios.get('/devApi').then(
+  // 浏览器拼接服务器地址 + /devApi 找到vite --> server(代理服务器) --> proxy
   (res) => {
-    // console.log(res.data);
+    console.log(res.data);
   },
   (err) => {
     console.log(err);
